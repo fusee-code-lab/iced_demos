@@ -1,28 +1,7 @@
-#![windows_subsystem = "windows"]
-use iced::{
-    Font, Settings, Size,
-    widget::{Column, button, column, text},
-    window,
-};
-
-fn main() -> iced::Result {
-    iced::application("DEMO", Counter::update, Counter::view)
-        .settings(Settings {
-            default_font: Font::with_name("微软雅黑"),
-            ..Settings::default()
-        })
-        .window(window::Settings {
-            size: Size {
-                width: 400.0,
-                height: 300.0,
-            },
-            ..window::Settings::default()
-        })
-        .run()
-}
+use iced::widget::{Column, button, column, text};
 
 #[derive(Debug)]
-struct Counter {
+pub struct Counter {
     value: Vec<bool>,
     index: usize,
 }
